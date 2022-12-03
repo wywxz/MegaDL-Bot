@@ -21,4 +21,4 @@ if __name__ == "__main__" :
     print('\n\n>>> MegaDL-Bot Started. Join @AsmSafone!')
     idle()
     app.stop()
-    #print('\n\n>>> MegaDL-Bot Stopped. Join @AsmSafone!')
+    print('\n\n>>> MegaDL-Bot Stopped. Join @AsmSafone!')
