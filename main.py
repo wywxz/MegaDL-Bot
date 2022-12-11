@@ -22,7 +22,7 @@ def web_server():
     web_app.add_routes(routes)
     return web_app
 
-if __name__ == "__main__" :
+def start_services():
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
     plugins = dict(root="megadl")
@@ -36,8 +36,11 @@ if __name__ == "__main__" :
     app.start()
     print('\n\n>>> MegaDL-Bot Started. Join @AsmSafone!')
     server = web.AppRunner(web_server())
-    server.setup()
-    web.TCPSite(server, "0.0.0.0", 8080).start()
+    await server.setup()
+    await web.TCPSite(server, "0.0.0.0", 8080).start()
     idle()
     app.stop()
     print('\n\n>>> MegaDL-Bot Stopped. Join @AsmSafone!')
+
+if __name__ == "__main__" :
+    start_services()
