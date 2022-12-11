@@ -22,7 +22,7 @@ def web_server():
     web_app.add_routes(routes)
     return web_app
 
-def start_services():
+async def start_services():
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
     plugins = dict(root="megadl")
